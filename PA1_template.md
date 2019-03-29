@@ -51,8 +51,7 @@ steps <- with(df, aggregate(steps, by = list(date), FUN = sum, na.rm = TRUE))
 names(steps) <- c("date", "steps")
 hist(steps$steps, main = "Total number of steps taken per day", xlab = "Total steps taken per day", col = "darkblue")
 ```
-
-![](PA1_template_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
+![steps](instructions_fig/plot1.png) <!-- -->
 
 ```r
 dev.copy (png,filename="plot1.png")
@@ -98,7 +97,7 @@ names(average) <- c("interval", "mean")
 plot(average$interval, average$mean, type = "l", xlab="Interval", ylab="Average number of steps", main="Average number of steps per intervals")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+![average number of steps taken](instructions_fig/plot2.png) <!-- -->
 
 ```r
 dev.copy (png,filename="plot2.png")
@@ -146,7 +145,7 @@ names(total_steps_imputed) <- c("date", "daily_steps")
 hist(total_steps_imputed$daily_steps, xlab = "Total steps per day", main = "Total number of steps taken each day")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
+![total number of steps taken each day after missing values are imputed](instructions_fig/plot3.png) <!-- -->
 
 ```r
 dev.copy (png,filename="plot3.png")
@@ -185,7 +184,7 @@ plot<- ggplot(df_by_date, aes(x = interval , y = steps, color = datetype)) +
 print(plot)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
+![average number of steps taken per 5-minute interval across weekdays and weekends](instructions_fig/plot4.png) <!-- -->
 
 ```r
 dev.copy (png,filename="plot4.png")
